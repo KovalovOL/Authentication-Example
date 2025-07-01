@@ -57,7 +57,7 @@ async def update_post(
     return post_crud.update_post(db, post_id, updates)
 
 @router.delete("/{post_id}")
-async def delete_post(
+async def delete_post(  
     post_id: int = Path(..., ge=0),
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)

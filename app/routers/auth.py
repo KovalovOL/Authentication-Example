@@ -37,5 +37,5 @@ async def login_user(credentials: UserLogin, response: Response, db: Session = D
 
 
 @router.get("/me")
-async def get_current_user(current_user = Depends(get_current_user)):
+async def get_current_user_via_cookie(current_user = Depends(get_current_user)):
     return {"username": current_user.username}
